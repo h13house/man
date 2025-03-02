@@ -1,0 +1,112 @@
+# 角色数据
+characters = [
+    {
+        "id": 1,
+        "name": "阿露",
+        "rarity": "SSR",
+        "school": "千年科学学园",
+        "role": "攻击型",
+        "skills": [
+            {"name": "精准射击", "description": "对单个敌人造成高额伤害"},
+            {"name": "火力全开", "description": "对范围内敌人造成AOE伤害"}
+        ],
+        "stats": {"HP": 5000, "ATK": 1200, "DEF": 800}
+    },
+    {
+        "id": 2,
+        "name": "白子",
+        "rarity": "SR",
+        "school": "格黑娜学园",
+        "role": "支援型",
+        "skills": [
+            {"name": "治疗之光", "description": "恢复队友HP"},
+            {"name": "鼓舞士气", "description": "提升队友攻击力"}
+        ],
+        "stats": {"HP": 4500, "ATK": 900, "DEF": 1000}
+    },
+    {
+        "id": 3,
+        "name": "伊织",
+        "rarity": "SSR",
+        "school": "三一综合学园",
+        "role": "防御型",
+        "skills": [
+            {"name": "钢铁之盾", "description": "为队友提供护盾"},
+            {"name": "反击风暴", "description": "对攻击者造成反击伤害"}
+        ],
+        "stats": {"HP": 6000, "ATK": 800, "DEF": 1500}
+    }
+]
+
+# 任务数据
+quests = [
+    {
+        "id": 1,
+        "name": "新手教程",
+        "description": "完成基础操作教学",
+        "reward": {"EXP": 100, "金币": 500, "道具": "新手礼包"}
+    },
+    {
+        "id": 2,
+        "name": "击败Boss",
+        "description": "击败关卡Boss",
+        "reward": {"EXP": 300, "金币": 1000, "道具": "稀有装备箱"}
+    },
+    {
+        "id": 3,
+        "name": "收集资源",
+        "description": "收集100个资源点",
+        "reward": {"EXP": 200, "金币": 800, "道具": "材料包"}
+    }
+]
+
+# 资源数据
+resources = [
+    {
+        "id": 1,
+        "name": "金币",
+        "description": "用于升级角色和装备",
+        "max_capacity": 999999
+    },
+    {
+        "id": 2,
+        "name": "经验值",
+        "description": "用于提升角色等级",
+        "max_capacity": 999999
+    },
+    {
+        "id": 3,
+        "name": "体力",
+        "description": "用于进行任务和战斗",
+        "max_capacity": 120,
+        "regen_rate": "1点/5分钟"
+    }
+]
+
+# 输出示例数据
+def print_game_data():
+    print("===== 角色数据 =====")
+    for character in characters:
+        print(f"{character['name']} ({character['rarity']}) - {character['school']}")
+        print(f"角色: {character['role']}, HP: {character['stats']['HP']}, ATK: {character['stats']['ATK']}, DEF: {character['stats']['DEF']}")
+        for skill in character['skills']:
+            print(f"技能: {skill['name']} - {skill['description']}")
+        print()
+
+    print("===== 任务数据 =====")
+    for quest in quests:
+        print(f"{quest['name']}: {quest['description']}")
+        print(f"奖励: {quest['reward']}")
+        print()
+
+    print("===== 资源数据 =====")
+    for resource in resources:
+        print(f"{resource['name']}: {resource['description']}")
+        print(f"最大容量: {resource['max_capacity']}")
+        if "regen_rate" in resource:
+            print(f"恢复速率: {resource['regen_rate']}")
+        print()
+
+# 运行输出
+if __name__ == "__main__":
+    print_game_data()
